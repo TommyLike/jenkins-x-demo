@@ -61,16 +61,15 @@ function check-kind {
 
 
 function install-codeserver-service {
-  echo "installing helm service"
-  kubectl create serviceaccount --namespace kube-system tiller
-  kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+  #echo "installing helm service"
+  #kubectl create serviceaccount --namespace kube-system tiller
+  #kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
 
-  install-helm
-  helm init --service-account tiller --kubeconfig ${KUBECONFIG} --wait
+  #install-helm
+  #helm init --service-account tiller --kubeconfig ${KUBECONFIG} --wait
 
 
-   echo "installing"
-
+   echo "installing jenkins x (none operation)"
 }
 
 echo $* | grep -E -q "\-\-help|\-h"
